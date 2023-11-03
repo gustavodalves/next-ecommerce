@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation"
 const Logo = () => {
     const router = useRouter()
     return (
-        <Image className="w-52 cursor-pointer" src={logo} onClick={() => router.push("/ecommerce")}></Image>
+        <Image alt="logo" className="w-52 cursor-pointer" src={logo} onClick={() => router.push("/ecommerce")}></Image>
     )
 }
 

@@ -7,7 +7,7 @@ interface Item {
     name: string, route: string
 }
 
-const items: Item[] = {}
+const items: Item[] = []
 
 export const Nav = (
 
