@@ -1,24 +1,9 @@
 import CatalogItem from "@/components/Catalog/Item/Item"
+import ProductService from "@/service/gateways/product"
 import Image from "next/image"
 
-interface EcommerceLayoutProps {
-    children: React.ReactNode
-}
-
-const Ecommerce= async ({ children }: EcommerceLayoutProps) => {
-    const items = await fetch("https://fakestoreapi.com/products")
-    const data = await items.json() as {
-        id: number,
-        title: string
-        price: number
-        description: string
-        category: string
-        image: string
-        rating: {
-            rate: number
-            count: number
-        }
-    }[]
+const Ecommerce= async () => {
+    const data = await new ProductService().index()
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
