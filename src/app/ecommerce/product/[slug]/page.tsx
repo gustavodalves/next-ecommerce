@@ -26,7 +26,7 @@ async function ProductPage(props: ProductPageProps) {
                     <Image width={300} height={300} alt={data.title} className="rounded w-72 mx-auto" src={data.image}></Image>
                 </div>
 
-                <div className="flex flex-col justify-around max-h-72 text-center lg:text-left gap-2">                    
+                <div className="flex flex-col justify-around text-center lg:text-left gap-2">                    
                     <ProductTitle> {data.title} </ProductTitle>
 
                     <div className="mx-auto lg:mx-0">
