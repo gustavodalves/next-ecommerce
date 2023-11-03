@@ -1,12 +1,10 @@
-"use client"
-
 import Button from "@/components/Button/Button"
 import ProductImage from "./Image"
 import ProductPrice from "./Price"
 import ProductCatalogRoot from "./Root"
 import Star from "./Star"
 import ProductTitle from "./Title"
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 interface ItemCatalogProps {
     item: {
@@ -24,14 +22,13 @@ interface ItemCatalogProps {
 }
 
 const CatalogItem = ({ item }: ItemCatalogProps) => {
-    const router = useRouter()
     return (
         <ProductCatalogRoot>
-            <ProductImage src={item.image} />
+            <ProductImage alt={item.title} src={item.image} />
             <ProductTitle> { item.title } </ProductTitle>
             <Star rating={4}></Star>
             <ProductPrice value={item.price} />
-            <Button onClick={() => router.push(`ecommerce/product/${item.id}`)}> Buy </Button>
+            <Link className="w-100 block" href={`ecommerce/product/${item.id}`}> <Button> Buy </Button> </Link>
         </ProductCatalogRoot>
     )
 }

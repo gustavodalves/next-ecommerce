@@ -1,15 +1,13 @@
-"use client"
-
 import Image from "next/image"
 
 import logo from "@/assets/logo.png"
-
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 const Logo = () => {
-    const router = useRouter()
     return (
-        <Image alt="logo" className="w-52 cursor-pointer" src={logo} onClick={() => router.push("/ecommerce")}></Image>
+        <Link href={"/ecommerce"}>
+            <Image alt="logo" className="w-52 cursor-pointer" src={logo}></Image>
+        </Link>
     )
 }
 

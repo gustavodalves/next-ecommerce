@@ -5,6 +5,8 @@ import Star from "@/components/Catalog/Item/Star"
 import ProductTitle from "@/components/Catalog/Item/Title"
 import ProductService from "@/service/gateways/product"
 
+import Image from "next/image"
+
 interface ProductPageProps {
     params: {
         slug: number
@@ -21,12 +23,15 @@ async function ProductPage(props: ProductPageProps) {
         <Card className="rounded lg:w-9/12 w-12/12">
             <div className="flex justify-around lg:flex-row flex-col">
                 <div className="p-8 bg-white">
-                    <img className="rounded w-72 mx-auto" src={data.image}></img>
+                    <Image width={300} height={300} alt={data.title} className="rounded w-72 mx-auto" src={data.image}></Image>
                 </div>
 
-                <div className="flex flex-col justify-around max-h-72">                    
+                <div className="flex flex-col justify-around max-h-72 text-center lg:text-left gap-2">                    
                     <ProductTitle> {data.title} </ProductTitle>
-                    <Star rating={4}></Star>
+
+                    <div className="mx-auto lg:mx-0">
+                        <Star rating={4}></Star>
+                    </div>
                     <ProductPrice value={data.price}></ProductPrice>
 
                     <p className="max-w-2xl"> {data.description} </p>
