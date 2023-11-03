@@ -11,6 +11,8 @@ interface ProductPageProps {
     }
 }
 
+export const revalidate = 60
+
 async function ProductPage(props: ProductPageProps) {
     const data = await new ProductService().show(props.params.slug)
     
