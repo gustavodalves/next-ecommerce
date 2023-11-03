@@ -1,3 +1,4 @@
+import Card from "../Card/Card"
 import Logo from "../Logo/Logo"
 
 interface NavProps {}
@@ -12,11 +13,13 @@ export const Nav = (
 
 ) => {
     return (
-        <nav className="bg-gray-900 top-0 left-0 w-full">
-            <Logo></Logo>
-            <ul>
-                <li></li>
-            </ul>
+        <nav className="top-0 left-0 w-full">
+            <Card>
+                <Logo></Logo>
+                <ul>
+                    <li></li>
+                </ul>
+            </Card>
         </nav>
     )
 }
